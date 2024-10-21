@@ -1,0 +1,29 @@
+# Définition des étapes (stages) du pipeline
+stages:
+  - setup
+  - build
+  - test
+
+# Étape d'installation des dépendances
+setup:
+  stage: setup
+  script:
+    - pip install -r requirements.txt  # Commande pour installer les dépendances
+  tags:
+    - docker  # Utilisation de Docker runner (optionnel)
+
+# Étape de compilation/exécution du code (si applicable)
+build:
+  stage: build
+  script:
+    - python setup.py install  # Exemple de commande pour installer un projet Python
+  tags:
+    - docker
+
+# Étape de tests unitaires
+test:
+  stage: test
+  script:
+    - pytest  # Commande pour exécuter les tests unitaires avec pytest
+  tags:
+    - docker
