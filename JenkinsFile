@@ -6,22 +6,22 @@ pipeline {
             steps {
                 echo 'Configuration de l\'environnement...'
                 // Exemple : Installation des dépendances si nécessaire
-                // sh 'pip install -r requirements.txt'
+                // bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Compilation/Execution du programme...'
-                sh 'python hello_world.py' 
-                // Ou : sh 'py hello_world.py'
+                bat 'python hello_world.py' 
+                // Ou : bat 'py hello_world.py'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Execution des tests unitaires...'
-                sh 'echo "Exécution des tests unitaires : OK"'
+                bat 'echo "Exécution des tests unitaires : OK"'
                 // Remplacez par la commande de test réelle si nécessaire
             }
         }
@@ -29,7 +29,7 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline termine.'
+            echo 'Pipeline terminé.'
         }
     }
 }
