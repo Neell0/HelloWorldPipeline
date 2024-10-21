@@ -1,1 +1,34 @@
+pipeline {
+    agent any
 
+    stages {
+        stage('Setup') {
+            steps {
+                echo 'Configuration de l\'environnement...'
+                // sh 'npm install' ou sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Compilation/Exécution du programme...'
+                // sh 'javac HelloWorld.java' puis sh 'java HelloWorld'
+                // sh 'echo "Hello, World!"'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Exécution des tests unitaires...'
+                // sh 'npm test' ou sh 'pytest tests/'
+                // sh 'echo "Exécution des tests unitaires : OK"'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline terminé.'
+        }
+    }
+}
