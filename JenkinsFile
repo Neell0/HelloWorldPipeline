@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compilation/Execution du programme...'
-                sh 'hello_world.py'
+                sh 'python3 hello_world.py'
             }
         }
 
