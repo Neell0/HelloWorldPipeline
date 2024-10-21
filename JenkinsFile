@@ -5,23 +5,24 @@ pipeline {
         stage('Setup') {
             steps {
                 echo 'Configuration de l\'environnement...'
-                // sh 'npm install' ou sh 'pip install -r requirements.txt'
+                // Exemple : Installation des dépendances si nécessaire
+                // sh 'pip install -r requirements.txt'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Compilation/Execution du programme...'
-                sh 'chmod +x hello_world.py'
-                sh 'python3 hello_world.py'
+                sh 'python hello_world.py' 
+                // Ou : sh 'py hello_world.py'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Execution des tests unitaires...'
-                // sh 'npm test' ou sh 'pytest tests/'
                 sh 'echo "Exécution des tests unitaires : OK"'
+                // Remplacez par la commande de test réelle si nécessaire
             }
         }
     }
