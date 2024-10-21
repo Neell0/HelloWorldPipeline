@@ -1,14 +1,4 @@
-# Étape pour installer les dépendances
-setup:
-	@echo "Installation des dépendances..."
-	pip install -r requirements.txt
-
-# Étape pour compiler ou exécuter le code
-build:
-	@echo "Compilation ou exécution du code..."
-	python setup.py build
-
-# Étape pour lancer les tests unitaires
-test:
-	@echo "Lancement des tests unitaires..."
-	pytest tests/
+jenkins-job-builder>=6.1.0
+python-jenkins @ git+https://github.com/evgeni/python-jenkins@all-All-all
+lxml
+requests
