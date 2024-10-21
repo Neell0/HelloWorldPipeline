@@ -11,24 +11,23 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Compilation/Exécution du programme...'
-                // sh 'javac HelloWorld.java' puis sh 'java HelloWorld'
-                // sh 'echo "Hello, World!"'
+                echo 'Compilation/Execution du programme...'
+                sh 'hello_world.py'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Exécution des tests unitaires...'
+                echo 'Execution des tests unitaires...'
                 // sh 'npm test' ou sh 'pytest tests/'
-                // sh 'echo "Exécution des tests unitaires : OK"'
+                sh 'echo "Exécution des tests unitaires : OK"'
             }
         }
     }
 
     post {
         always {
-            echo 'Pipeline terminé.'
+            echo 'Pipeline termine.'
         }
     }
 }
